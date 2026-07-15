@@ -169,7 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const output = document.getElementById('output');
 
-  output.textContent = '[INPUT NOT FOUND.]';
+ output.style.color = "red";
+output.style.fontSize = "30px";
+output.textContent = '[INPUT NOT FOUND.]';
 
   input.value = '';
 
