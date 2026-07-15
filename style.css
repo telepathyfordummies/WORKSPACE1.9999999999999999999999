@@ -322,3 +322,17 @@ z-index: 21;
   font-size: 28px;
   cursor: pointer;
 }
+
+#glitch1 {
+  z-index: 150;
+      top: 1419px;
+  left: 40px;
+    
+}
+
+#glitch2 {
+  z-index: 150;
+      top: 1419px;
+  left: 80px;
+    
+}
