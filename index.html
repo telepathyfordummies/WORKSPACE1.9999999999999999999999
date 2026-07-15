@@ -80,14 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- DOM ELEMENTS ---
   const ambientOne = document.getElementById('ambient-one');
   const ambientOther = document.getElementById('ambient-other');
-  const powerBtn = document.getElementById('power-btn');
   const monitorOn = document.getElementById('monitor-on');
   const input = document.getElementById('real-input');
   const redBtn = document.getElementById('submit-red');
   const greenBtn = document.getElementById('submit-green');
 
-  const nameplateOne = document.getElementById('nameplate-one');
-  const nameplateOther = document.getElementById('nameplate-other');
+
   const extrasOne = document.getElementById('extras-one');
   const extrasOther = document.getElementById('extras-other');
 
@@ -183,31 +181,7 @@ const modalData = {
     }
   }
 
-  // --- POWER BUTTON ---
-  powerBtn.addEventListener('click', () => {
-    // Start ambient audio and storm on first user interaction
-    startAmbient();
-
-    isMonitorOn = !isMonitorOn;
-    monitorOn.classList.toggle('hidden', !isMonitorOn);
-    input.disabled = !isMonitorOn;
-    redBtn.style.pointerEvents = isMonitorOn ? 'auto' : 'none';
-
-    // reset overlays when turning off
-    if (!isMonitorOn) {
-      input.value = '';
-      monitorOverlayOne.style.display = 'none';
-      monitorOverlayOther.style.display = 'none';
-      monitorOverlayOne.textContent = '';
-      monitorOverlayOther.textContent = '';
-    } else {
-      // show overlay for active desk
-      if (nameplateOther.classList.contains('hidden')) {
-        monitorOverlayOne.style.display = 'flex';
-      } else {
-        monitorOverlayOther.style.display = 'flex';
-      }
-    }
+  
 
     // little thunder effect when turning on
     thunderAudio.currentTime = 0;
@@ -215,15 +189,15 @@ const modalData = {
   });
 
   // --- SUBMIT BUTTON ---
- redBtn.addEventListener('click', () => {
+redBtn.addEventListener('click', () => {
 
   const normalized =
     input.value.trim().toLowerCase();
 
-  const response =
-    deskOneResponses[normalized];
+  const popup =
+    modalData[normalized];
 
-  if (!response) {
+  if (!popup) {
 
     showModal(
       "assets/popups/not-found.png",
@@ -234,70 +208,16 @@ const modalData = {
     return;
   }
 
-  const popup =
-    modalData[normalized];
-
-  if (popup) {
-
-    showModal(
-      popup.image,
-      popup.text
-    );
-
-  } else {
-
-    showModal(
-      "assets/popups/default.png",
-      response
-    );
-
-  }
+  showModal(
+    popup.image,
+    popup.text
+  );
 
   input.value = '';
 });
 
-    redBtn.classList.add('hidden');
-    greenBtn.classList.remove('hidden');
+ 
 
-    if (nameplateOther.classList.contains('hidden')) {
-      monitorOverlayOne.style.display = 'flex';
-      monitorOverlayOne.innerHTML = deskOneResponses[normalized] || "[INPUT NOT FOUND.]";
-    } else {
-      monitorOverlayOther.style.display = 'flex';
-      monitorOverlayOther.innerHTML = deskOtherResponses[normalized] || "[INPUT NOT FOUND.]";
-    }
-
-    setTimeout(() => {
-      redBtn.classList.remove('hidden');
-      greenBtn.classList.add('hidden');
-    }, 500);
-
-    input.value = '';
-  });
-
-
-  // --- NAMEPLATE TOGGLE ---
-  nameplateOne.addEventListener('click', () => {
-    nameplateOne.classList.add('hidden');
-    nameplateOther.classList.remove('hidden');
-    extrasOne.classList.add('hidden');
-    extrasOther.classList.remove('hidden');
-
-    monitorOverlayOne.style.display = 'none';
-    monitorOverlayOther.style.display = isMonitorOn ? 'flex' : 'none';
-    updateStorm();
-  });
-
-  nameplateOther.addEventListener('click', () => {
-    nameplateOther.classList.add('hidden');
-    nameplateOne.classList.remove('hidden');
-    extrasOther.classList.add('hidden');
-    extrasOne.classList.remove('hidden');
-
-    monitorOverlayOther.style.display = 'none';
-    monitorOverlayOne.style.display = isMonitorOn ? 'flex' : 'none';
-    updateStorm();
-  });
 
   // --- MODAL STUFF
 
@@ -370,25 +290,7 @@ interactiveElements.forEach(id => {
 
   el.addEventListener('click', () => {
 
-    // Determine active desk
-    const isDeskOneActive = !nameplateOne.classList.contains('hidden');
-    const isDeskOtherActive = !nameplateOther.classList.contains('hidden');
-
-    // Block interaction if wrong desk
-    if ((id.includes('-one') && !isDeskOneActive) ||
-        (id.includes('-other') && !isDeskOtherActive)) {
-      return;
-    }
-
-    // Play correct sound
-    if (id === 'drawer-clickable-one' || id === 'drawer-clickable-other') {
-      drawerOpenAudio.currentTime = 0;
-      drawerOpenAudio.play().catch(() => {});
-    } else {
-      pageCollectAudio.currentTime = 0;
-      pageCollectAudio.play().catch(() => {});
-    }
-
+  
     // Show popup
     showPopup(id);
   });
