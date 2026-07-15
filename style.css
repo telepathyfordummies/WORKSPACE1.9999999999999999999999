@@ -22,7 +22,7 @@ body {
 
  #window {
   z-index: 10;
-  left: 1585
+  left: 1585px;
 }
 
 
@@ -39,14 +39,14 @@ body {
 
 #nameplate-base, #monitor-on, #monitor-screen, #monitor-shell, #monitor-wrapper {
   z-index: 20;
-      top: -50;
-    left: 280;
+      top: -50px;
+    left: 280px;
 }
 
 #input-bar {
     z-index: 20;
-    top: 1190;
-    left: 470;
+    top: 1190px;
+    left: 470px;
     
     
 }
@@ -111,8 +111,8 @@ z-index: 21;
 }
 
  #input-bg {
-     top:1200;
-     left:250;
+     top:1200px;
+     left:250px;
 }
 
 
