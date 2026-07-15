@@ -220,6 +220,14 @@ output.textContent = '[INPUT NOT FOUND.]';
   // --- MODAL ---
 function showModal(imageSrc, text, title = "???", small = false) {
 
+  const modal = document.getElementById("info-modal");
+
+  if (small) {
+    modal.classList.add("small-modal");
+  } else {
+    modal.classList.remove("small-modal");
+  }
+
   document.getElementById("modal-title").innerHTML = title;
 
   const modalImage = document.getElementById("modal-image");
@@ -366,7 +374,7 @@ function closeModal() {
   if (id === "breakpoint") {
 
     showModal(
-      " ",
+      null,
       "God was made in our image.",
       "IMPENDING ERROR",
       true
