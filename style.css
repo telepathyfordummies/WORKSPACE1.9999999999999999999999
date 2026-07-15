@@ -168,8 +168,7 @@ z-index: 21;
 }
 
 
- #submit-red,
-#submit-green {
+#submit-red {
   position: absolute;
   top: 1390px;
   left: 1279px;
@@ -179,6 +178,15 @@ z-index: 21;
   object-fit: contain;
 }
 
+#submit-green{
+position: absolute;
+  top: 1385px;
+  left: 1296px;
+  z-index: 300;
+  cursor: pointer;
+  display: block;
+  object-fit: contain;
+}
 
 
 
