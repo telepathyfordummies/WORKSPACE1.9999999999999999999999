@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  background: #000;
+}
+
+#scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  overflow: hidden;
+}
+
+
+#scene > * {
+  position: absolute;
+}
+
+#windows, #wall {
+  z-index: 10
+}
+
+#candle {
+  z-index: 11
+}
+
+#desk {
+  z-index: 15
+}
+
+#nameplate-base, #monitor-on, #monitor-screen, #monitor-shell, #monitor-wrapper, #drawercontainer, #input-bar, #input-bg {
+  z-index: 20
+}
+
+#real-input {
+  position: absolute;
+  top: 1319px;       /* manually adjust to match input-bar vertical position */
+  left: 460px;      /* manually adjust to match input-bar horizontal position */
+  width: 355px;     /* match input-bar width */
+  height: 45px;     /* match input-bar height */
+  transform: rotate(-11deg);   /* match input-bar angle */
+  transform-origin: top left;  /* rotate around top-left corner */
+  border: none;
+  background-color: rgba(173,216,230,0.0);  /* semi-transparent for alignment */
+  font-size: 20px;
+   font-family: 'Roboto Mono', monospace;
+  font-weight: 700; /* bold */
+   text-transform: uppercase;
+  padding: 5px 10px;
+ z-index: 30;   
+  color: black;
+}
+
+#power-btn {
+  position: absolute;
+  top: 1370px;        /* adjust to where button should be */
+  left: 320px;
+  width: 60px;
+  height: 60px;
+ background-color: #1d6dbd;  /* dark gray */
+  border-radius: 50%;      /* makes it a circle */
+  cursor: pointer;
+  z-index: 1000;     /* above other elements */
+}
+
+#power-btn {
+  box-shadow: 0 0 5px #000; /* subtle shadow for depth */
+  transition: background-color 0.2s; /* smooth hover effect */
+}
+
+#power-btn:hover {
+  background-color: #7ac8ff;  /* lighter gray on hover */
+}
+
+/* Monitor placeholder */
+#monitor-on {
+  position: absolute;
+  top: 450px;       
+  left: 200px;
+  width: 600px;
+  height: 550px;
+  background: transparent;  
+  z-index: 500;      /* behind the button */
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+ #submit-red,
+#submit-green {
+  position: absolute;
+  top: 1275px;
+  left: 620px;
+  z-index: 300;
+  cursor: pointer;
+  display: block;
+  object-fit: contain;
+}
+
+#submit-red {
+  width: 290px;
+  height: 165px;
+}
+
+#submit-green {
+  width: 280px;
+  height: 160px
+}
+
+#submit-green {
+  pointer-events: none;
+}
+
+#submit-green:not(.hidden) {
+  pointer-events: auto;
+}
+
+#submit-green.hidden {
+  display: none;
+}
+
+
+#breakpoint {
+  position: absolute;
+  top: 1170px;
+  left: 90px;
+  z-index: 310;
+  cursor: pointer;
+  display: block;
+  object-fit: contain;
+}
+
+.monitor-overlay {
+  position: absolute;
+  top: 480px; 
+  left: 240px;  /* adjusted to fit inside monitor-on.png */
+  width: 500px;  /* match monitor size ish.. */
+  height: 450px; /* match monitor size also ish... close enough */
+  background: rgba(0, 0, 0, 0.0); /* transparent */
+  color: #000;  /* black text. do you like the black text? maybe fiddle with later... */
+  font-family: Roboto; monospace;
+  font-size: 50px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700; /* bold */
+   text-transform: uppercase;
+  padding: 10px;
+  overflow-y: auto;
+  display: none; /* start hidden */
+  z-index: 600;  /* above monitor-on.png */
+  display: flex;
+  align-items: center;    /* vertical center */
+  justify-content: center; /* horizontal center */
+  text-align: center;     /* center text if multiple lines */
+  padding: 20px;          /* optional padding inside overlay */
+  overflow-wrap: break-word; /* wrap long text */
+}
+
+.lightning-flash {
+  filter: brightness(2.0);
+}
+
+.monitor-overlay img {
+  width: 600px;
+  height: 550px;
+}
+
+.monitor-overlay-video {
+  position: absolute;
+  top: 480px;   /* same position as monitor */
+  left: 240px;
+  width: 600px; /* match monitor width */
+  height: 550px; /* match monitor height */
+  background: rgba(0,0,0,0);
+  display: none;
+  z-index: 610; /* higher than text overlay so it goes on top flor the love of hell though please keep track of ur z index this is ur highest rn */
+  overflow: hidden; /* video fills container */
+}
+
+.monitor-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill monitor completely?? prayfully...? */
+  display: block;
+}
