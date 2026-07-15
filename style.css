@@ -16,9 +16,15 @@ body {
   position: absolute;
 }
 
-#windows, #wall {
+#wall {
   z-index: 10
 }
+
+ #window {
+  z-index: 10;
+  left: 1585
+}
+
 
 #candle {
   z-index: 11
