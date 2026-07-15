@@ -336,3 +336,47 @@ z-index: 21;
   left: 80px;
     
 }
+
+.glitch-image {
+  animation:
+    glitch-shift 4s infinite,
+    glitch-flicker 0.15s infinite;
+}
+
+
+@keyframes glitch-shift {
+
+  0%, 95%, 100% {
+    transform: translateX(0);
+  }
+
+  96% {
+    transform: translateX(-6px);
+  }
+
+  97% {
+    transform: translateX(4px);
+  }
+
+  98% {
+    transform: translateX(-2px);
+  }
+
+}
+
+
+@keyframes glitch-flicker {
+
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .85;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
