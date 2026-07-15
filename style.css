@@ -96,28 +96,26 @@ body {
   display: none;
 }
 
+ #input-bg {
+     top:1200;
+     left:250;
+}
 
 
  #submit-red,
 #submit-green {
   position: absolute;
-  top: 1275px;
-  left: 620px;
+  top: 1300px;
+  left: 1000px;
   z-index: 300;
   cursor: pointer;
   display: block;
   object-fit: contain;
 }
 
-#submit-red {
-  width: 290px;
-  height: 165px;
-}
 
-#submit-green {
-  width: 280px;
-  height: 160px
-}
+
+
 
 #submit-green {
   pointer-events: none;
