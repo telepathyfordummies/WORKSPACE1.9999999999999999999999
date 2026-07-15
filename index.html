@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let ambientStarted = false;
 
+  
 
   // --- POPUP DATA ---
   const modalData = {
@@ -166,10 +167,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+
   // Start audio after first interaction
   document.addEventListener('click', startAmbient, { once: true });
+  
+// --- POPUP SOUNDS SPECIFICALLY ---
+
+const breakpointAudio =
+  new Audio('assets/audio/breakpoint.mp3');
+
+breakpointAudio.volume = 0.5;
 
 
+const errorAudio =
+  new Audio('assets/audio/error.mp3');
+
+errorAudio.volume = 0.5;
+
+
+const popupAudio =
+  new Audio('assets/audio/popup.mp3');
+
+popupAudio.volume = 0.5;
+
+
+  
   // --- SUBMIT BUTTON ---
 redBtn.addEventListener('click', () => {
 
@@ -203,7 +225,6 @@ redBtn.addEventListener('click', () => {
 
   return;
 
-}
 }
 
 
@@ -333,25 +354,7 @@ function closeModal() {
 
   drawerOpenAudio.volume = 0.4;
 
-  // --- POPUP SOUNDS SPECIFICALLY ---
-
-const breakpointAudio =
-  new Audio('assets/audio/breakpoint.mp3');
-
-breakpointAudio.volume = 0.5;
-
-
-const errorAudio =
-  new Audio('assets/audio/error.mp3');
-
-errorAudio.volume = 0.5;
-
-
-const popupAudio =
-  new Audio('assets/audio/popup.mp3');
-
-popupAudio.volume = 0.5;
-
+  
 
 
   // --- VIDEO OUTPUT ---
