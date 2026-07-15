@@ -77,46 +77,48 @@
 <!-- JS -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+
   // --- DOM ELEMENTS ---
   const ambientOne = document.getElementById('ambient-one');
   const ambientOther = document.getElementById('ambient-other');
+
   const input = document.getElementById('real-input');
   const redBtn = document.getElementById('submit-red');
-  const greenBtn = document.getElementById('submit-green');
 
   const thunderAudio = new Audio('assets/audio/thunder-audio.mp3');
   thunderAudio.volume = 0.3;
 
-  let isMonitorOn = false;
   let ambientStarted = false;
-  let stormTimeout;
 
 
-  // HELLOOOOO YOUR RESPONSES GO HERE!!! IF YOU ARE READING THIS AND YOU ARE NOT ME, TELEPATHYFORDUMMIES, GET THE FUCK OUT!!!!! YOU'RE CHEATING!!! I KNOW WHAT YOU ARE!!!!!!!
-const modalData = {
+  // --- POPUP DATA ---
+  const modalData = {
 
-  tweek: {
-    image: "assets/popups/tweek.png",
-    text: "The Resonant"
-  },
+    tweek: {
+      image: "assets/popups/tweek.png",
+      text: "The Resonant"
+    },
 
-  craig: {
-    image: "assets/popups/craig.png",
-    text: "Bearer of Calm"
-  },
+    craig: {
+      image: "assets/popups/craig.png",
+      text: "Bearer of Calm"
+    },
 
-  wendy: {
-    image: "assets/popups/wendy.png",
-    text: "Maiden of Silence"
-  }
+    wendy: {
+      image: "assets/popups/wendy.png",
+      text: "Maiden of Silence"
+    }
 
-  // add more entries here
+    // add more entries here
 
-};
+  };
 
-// --- AMBIENT AUDIO & STORM ---
+
+  // --- AMBIENT AUDIO ---
   function startAmbient() {
+
     if (ambientStarted) return;
+
     ambientStarted = true;
 
     ambientOne.volume = 0.1;
@@ -125,153 +127,210 @@ const modalData = {
     ambientOne.play().catch(() => {});
     ambientOther.play().catch(() => {});
 
-  // --- RANDOM THUNDER ---
-
-const thunderAudio = new Audio('assets/audio/thunder-audio.mp3');
-thunderAudio.volume = 0.3;
-
-function scheduleThunder() {
-
-  const randomDelay = Math.random() * 30000 + 10000;
-  // 10-40 seconds between thunder sounds
-
-  setTimeout(() => {
-
-    thunderAudio.volume = Math.random() * 0.5 + 0.3;
-    thunderAudio.currentTime = 0;
-
-    thunderAudio.play().catch(() => {});
-
     scheduleThunder();
-
-  }, randomDelay);
-}
-
-
-// Start thunder loop
-scheduleThunder();
   }
+
+
+  // --- RANDOM THUNDER ---
+  function scheduleThunder() {
+
+    const randomDelay = Math.random() * 30000 + 10000;
+    // 10-40 seconds
+
+    setTimeout(() => {
+
+      thunderAudio.volume = Math.random() * 0.5 + 0.3;
+      thunderAudio.currentTime = 0;
+
+      thunderAudio.play().catch(() => {});
+
+      scheduleThunder();
+
+    }, randomDelay);
+
   }
+
+
+  // Start audio after first interaction
+  document.addEventListener('click', startAmbient, { once: true });
 
 
   // --- SUBMIT BUTTON ---
-redBtn.addEventListener('click', () => {
+  redBtn.addEventListener('click', () => {
 
-  const normalized =
-    input.value.trim().toLowerCase();
+    const normalized =
+      input.value.trim().toLowerCase();
 
-  const popup =
-    modalData[normalized];
+    const popup =
+      modalData[normalized];
 
-  if (!popup) {
+
+    if (!popup) {
+
+      document.getElementById('output').textContent =
+        '[INPUT NOT FOUND.]';
+
+      showModal(
+        "assets/popups/not-found.png",
+        "[INPUT NOT FOUND.]"
+      );
+
+      input.value = '';
+      return;
+
+    }
+
+
+    document.getElementById('output').textContent = '';
 
     showModal(
-      "assets/popups/not-found.png",
-      "[INPUT NOT FOUND.]"if (!popup) {
-
-  document.getElementById('output').textContent =
-    '[INPUT NOT FOUND.]';
-
-  input.value = '';
-  return;
-}
+      popup.image,
+      popup.text
     );
 
+
     input.value = '';
-    return;
-  }
-  
-document.getElementById('output').textContent = '';
-  
-  showModal(
-    popup.image,
-    popup.text
-  );
 
-  input.value = '';
-});
-
- 
+  });
 
 
-  // --- MODAL STUFF
 
+  // --- MODAL ---
   function showModal(imageSrc, text) {
 
-  document.getElementById("modal-image").src = imageSrc;
-  document.getElementById("modal-text").innerHTML = text;
+    document.getElementById("modal-image").src = imageSrc;
+
+    document.getElementById("modal-text").innerHTML = text;
+
+    document
+      .getElementById("info-modal")
+      .classList.remove("hidden");
+
+  }
+
+
+  function closeModal() {
+
+    document
+      .getElementById("info-modal")
+      .classList.add("hidden");
+
+  }
+
 
   document
-    .getElementById("info-modal")
-    .classList.remove("hidden");
-}
+    .getElementById("modal-close")
+    .addEventListener("click", closeModal);
 
-function closeModal() {
 
-  document
-    .getElementById("info-modal")
-    .classList.add("hidden");
-}
 
-document
-  .getElementById("modal-close")
-  .addEventListener("click", closeModal);
+  // --- POPUPS ---
+  function showPopup(elementId) {
 
- // --- POPUPS AND SOUNDS PLEASE GOD LET THIS WORK UGHEFWS IM TIRED!!---
-function showPopup(elementId) {
-  const existingPopup = document.getElementById('current-popup');
-  if (existingPopup) existingPopup.remove();
+    const existingPopup =
+      document.getElementById('current-popup');
 
-  const popup = document.createElement('img');
-  popup.id = 'current-popup';
-  popup.src = `assets/shared/${elementId}-popup.png`;
-  popup.style.position = 'fixed';
-  popup.style.top = '30%';
-  popup.style.left = '30%';
-  popup.style.transform = 'translate(-30%, -30%)';
-  popup.style.zIndex = '600';
-  popup.style.width = '30vw';
-  popup.style.height = 'auto';
-  popup.style.cursor = 'pointer';
-  popup.style.boxShadow = '0 0 20px rgba(0,0,0,0.5)';
-  popup.addEventListener('click', () => popup.remove());
+    if (existingPopup)
+      existingPopup.remove();
 
-  document.body.appendChild(popup);
-}
 
-// --- SOUNDS ---
-const pageCollectAudio = new Audio('assets/audio/page-collect.mp3');
-pageCollectAudio.volume = 0.4;
+    const popup =
+      document.createElement('img');
 
-const drawerOpenAudio = new Audio('assets/audio/drawer-open.mp3');
-drawerOpenAudio.volume = 0.4;
+
+    popup.id = 'current-popup';
+
+    popup.src =
+      `assets/shared/${elementId}-popup.png`;
+
+    popup.style.position = 'fixed';
+    popup.style.top = '30%';
+    popup.style.left = '30%';
+    popup.style.transform =
+      'translate(-30%, -30%)';
+
+    popup.style.zIndex = '600';
+    popup.style.width = '30vw';
+    popup.style.height = 'auto';
+    popup.style.cursor = 'pointer';
+
+    popup.style.boxShadow =
+      '0 0 20px rgba(0,0,0,0.5)';
+
+
+    popup.addEventListener('click', () => {
+      popup.remove();
+    });
+
+
+    document.body.appendChild(popup);
+
+  }
+
+
+
+  // --- SOUNDS ---
+  const pageCollectAudio =
+    new Audio('assets/audio/page-collect.mp3');
+
+  pageCollectAudio.volume = 0.4;
+
+
+  const drawerOpenAudio =
+    new Audio('assets/audio/drawer-open.mp3');
+
+  drawerOpenAudio.volume = 0.4;
+
+
 
   // --- VIDEO OUTPUT ---
-  const video = document.createElement('video');
-video.src = 'assets/outputs/rickroll.mp4';
-video.autoplay = true;
-video.controls = true;
-video.volume = 1; // full volume
+  const video =
+    document.createElement('video');
 
-// --- INTERACTIVE ELEMENTS ---
-const interactiveElements = [
-  'rock', 'books', 'drawer-clickable-one',
-  'crystal-ball', 'dice', 'pendant', 'hummels', 'hummels2', 'drawer-clickable-other'
-];
+  video.src =
+    'assets/outputs/rickroll.mp4';
 
-interactiveElements.forEach(id => {
-  const el = document.getElementById(id);
-  if (!el) return;
+  video.autoplay = true;
+  video.controls = true;
+  video.volume = 1;
 
-  el.addEventListener('click', () => {
 
-  
-    // Show popup
-    showPopup(id);
+
+  // --- INTERACTIVE ELEMENTS ---
+  const interactiveElements = [
+
+    'rock',
+    'books',
+    'drawer-clickable-one',
+    'crystal-ball',
+    'dice',
+    'pendant',
+    'hummels',
+    'hummels2',
+    'drawer-clickable-other'
+
+  ];
+
+
+  interactiveElements.forEach(id => {
+
+    const el =
+      document.getElementById(id);
+
+
+    if (!el) return;
+
+
+    el.addEventListener('click', () => {
+
+      showPopup(id);
+
+    });
+
   });
-  });
 
 
+});
 </script>
 
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59e7a616b2324d1498411e289f6de86c"}'></script><!-- End Cloudflare Web Analytics -->
