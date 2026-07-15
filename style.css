@@ -59,8 +59,8 @@ body {
 
 #monitor-screen {
   position: absolute;
-  top: 480px;
-  left: 240px;
+  top: 300px;
+  left: 570px;
   width: 500px;
   height: 450px;
 
@@ -68,7 +68,7 @@ body {
 
   color: black;
   font-family: 'Roboto Mono', monospace;
-  font-size: 50px;
+  font-size: 70px;
   font-weight: 700;
   text-transform: uppercase;
 
@@ -207,7 +207,7 @@ z-index: 21;
 }
 
 .monitor-overlay {
-  position: absolute;
+  position: absolute; /* ALL OF THIS HAS BEEN FIDDLED WITH AND RETITLED ABOVE. REM, DO NOT DELETE THIS. THIS IS UR EMERGENCY BACK UP COMPARE/CONTRAST. KISS! 
   top: 480px; 
   left: 240px;  /* adjusted to fit inside monitor-on.png */
   width: 500px;  /* match monitor size ish.. */
