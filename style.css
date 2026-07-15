@@ -307,6 +307,8 @@ position: absolute;
   display: flex;
   flex-direction: column;
 
+  box-sizing: border-box;
+
 }
 
 
@@ -369,19 +371,42 @@ position: absolute;
 
 
 #modal-image {
-  width: 100%;
-  height: auto;
+
+  width: auto;
+
+  max-width: 90%;
+  max-height: 60%;
 
   display: block;
-  margin-bottom: 20px;
+
+  margin: 20px auto;
+
+  object-fit: contain;
+
 }
+
 
 #modal-text {
-  color: white;
-  font-family: 'Roboto Mono', monospace;
-  line-height: 1.6;
-}
 
+  flex: 1;
+
+  color: black;
+
+  font-family: 'Roboto Mono', monospace;
+
+  font-size: 20px;
+
+  line-height: 1.6;
+
+  text-align: center;
+
+  padding: 20px;
+
+  overflow-y: auto;
+
+  min-height: 50px;
+
+}
 
 
 #glitch1,
