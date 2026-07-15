@@ -37,20 +37,35 @@ body {
 }
 
 
-#nameplate-base, #monitor-on, #monitor-screen, #monitor-shell, #monitor-wrapper, #drawercontainer, #input-bar, #input-bg {
-  z-index: 20
+#nameplate-base, #monitor-on, #monitor-screen, #monitor-shell, #monitor-wrapper {
+  z-index: 20;
+      top: -50;
+    left: 280;
+}
+
+#input-bar {
+    z-index: 20;
+    top: 1190;
+    left: 470;
+    
+    
+}
+
+
+#input-bg {
+z-index: 21;
 }
 
 #real-input {
   position: absolute;
-  top: 1319px;       /* manually adjust to match input-bar vertical position */
-  left: 460px;      /* manually adjust to match input-bar horizontal position */
-  width: 355px;     /* match input-bar width */
-  height: 45px;     /* match input-bar height */
-  transform: rotate(-11deg);   /* match input-bar angle */
+  top: 1310px;       /* manually adjust to match input-bar vertical position */
+  left: 560px;      /* manually adjust to match input-bar horizontal position */
+  width: 1150px;     /* match input-bar width */
+  height: 87px;     /* match input-bar height */
+  transform: rotate(0deg);   /* match input-bar angle */
   transform-origin: top left;  /* rotate around top-left corner */
   border: none;
-  background-color: rgba(173,216,230,0.0);  /* semi-transparent for alignment */
+  background-color: rgba(173,216,230, 0.0);  /* semi-transparent for alignment */
   font-size: 20px;
    font-family: 'Roboto Mono', monospace;
   font-weight: 700; /* bold */
@@ -105,8 +120,8 @@ body {
  #submit-red,
 #submit-green {
   position: absolute;
-  top: 1300px;
-  left: 1000px;
+  top: 1390px;
+  left: 1279px;
   z-index: 300;
   cursor: pointer;
   display: block;
