@@ -67,17 +67,25 @@
 
   <!-- IF YOU'RE IN HERE YOU'RE NOSY AS FUCK. STOP IT!!!!! STOP DOING THAT!!! BEHAVE!!!! -->
 
-      <!-- INFO MODAL -->
+   <!-- INFO MODAL -->
 <div id="info-modal" class="hidden">
+
   <div class="modal-content">
 
+    <!-- WINDOWS STYLE TITLE BAR -->
+    <div id="modal-title">???</div>
+
+    <!-- CLOSE BUTTON -->
     <button id="modal-close">✕</button>
 
+    <!-- POPUP IMAGE -->
     <img id="modal-image" src="" alt="">
 
+    <!-- POPUP TEXT -->
     <div id="modal-text"></div>
 
   </div>
+
 </div>
       
       
@@ -210,26 +218,30 @@ output.textContent = '[INPUT NOT FOUND.]';
 
 
   // --- MODAL ---
-  function showModal(imageSrc, text) {
+function showModal(imageSrc, text, title = "???") {
 
-    document.getElementById("modal-image").src = imageSrc;
+  document.getElementById("modal-title").innerHTML = title;
 
-    document.getElementById("modal-text").innerHTML = text;
+  document.getElementById("modal-image").src = imageSrc;
 
-    document
-      .getElementById("info-modal")
-      .classList.remove("hidden");
+  document.getElementById("modal-text").innerHTML = text;
 
-  }
+  document
+    .getElementById("info-modal")
+    .classList.remove("hidden");
+
+}
 
 
-  function closeModal() {
+function closeModal() {
 
-    document
-      .getElementById("info-modal")
-      .classList.add("hidden");
+  document
+    .getElementById("info-modal")
+    .classList.add("hidden");
 
-  }
+  document.getElementById("modal-title").innerHTML = "???";
+
+}
 
 
   document
@@ -321,7 +333,8 @@ output.textContent = '[INPUT NOT FOUND.]';
     'pendant',
     'hummels',
     'hummels2',
-    'drawer-clickable-other'
+    'drawer-clickable-other',
+    'breakpoint'
 
   ];
 
@@ -335,11 +348,25 @@ output.textContent = '[INPUT NOT FOUND.]';
     if (!el) return;
 
 
-    el.addEventListener('click', () => {
+  el.addEventListener('click', () => {
 
-      showPopup(id);
 
-    });
+  if (id === "breakpoint") {
+
+    showModal(
+      "breakpoint.png",
+      "God was made in our image.",
+      "IMPENDING ERROR"
+    );
+
+    return;
+
+  }
+
+
+  showPopup(id);
+
+});
 
   });
 
