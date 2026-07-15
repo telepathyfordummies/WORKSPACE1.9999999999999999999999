@@ -163,13 +163,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // --- SUBMIT BUTTON ---
-  redBtn.addEventListener('click', () => {
+redBtn.addEventListener('click', () => {
 
-    const normalized =
-      input.value.trim().toLowerCase();
+  // Flash green button
+  const greenBtn = document.getElementById('submit-green');
 
-    const popup =
-      modalData[normalized];
+  greenBtn.classList.remove('hidden');
+
+  setTimeout(() => {
+    greenBtn.classList.add('hidden');
+  }, 400);
+
+
+  const normalized =
+    input.value.trim().toLowerCase();
+
+  const popup =
+    modalData[normalized];
 
 
    if (!popup) {
