@@ -190,26 +190,32 @@ redBtn.addEventListener('click', () => {
     modalData[normalized];
 
 
-   if (!popup) {
+ if (!popup) {
+
+  errorAudio.currentTime = 0;
+  errorAudio.play().catch(() => {});
 
   const output = document.getElementById('output');
 
-output.textContent = '[INPUT NOT FOUND.]';
+  output.textContent = '[INPUT NOT FOUND.]';
 
   input.value = '';
 
   return;
 
 }
+}
 
 
     document.getElementById('output').textContent = '';
 
-    showModal(
-      popup.image,
-      popup.text
-    );
+    popupAudio.currentTime = 0;
+popupAudio.play().catch(() => {});
 
+showModal(
+  popup.image,
+  popup.text
+);
 
     input.value = '';
 
@@ -315,7 +321,7 @@ function closeModal() {
 
 
 
-  // --- SOUNDS ---
+  // --- SOUNDS --- dear self i dont think any of these are getting used. keep in case
   const pageCollectAudio =
     new Audio('assets/audio/page-collect.mp3');
 
@@ -326,6 +332,25 @@ function closeModal() {
     new Audio('assets/audio/drawer-open.mp3');
 
   drawerOpenAudio.volume = 0.4;
+
+  // --- POPUP SOUNDS SPECIFICALLY ---
+
+const breakpointAudio =
+  new Audio('assets/audio/breakpoint.mp3');
+
+breakpointAudio.volume = 0.5;
+
+
+const errorAudio =
+  new Audio('assets/audio/error.mp3');
+
+errorAudio.volume = 0.5;
+
+
+const popupAudio =
+  new Audio('assets/audio/popup.mp3');
+
+popupAudio.volume = 0.5;
 
 
 
@@ -371,18 +396,21 @@ function closeModal() {
   el.addEventListener('click', () => {
 
 
-  if (id === "breakpoint") {
+ if (id === "breakpoint") {
 
-    showModal(
-      null,
-      "God was made in our image.",
-      "IMPENDING ERROR",
-      true
-    );
+  breakpointAudio.currentTime = 0;
+  breakpointAudio.play().catch(() => {});
 
-    return;
+  showModal(
+    null,
+    "God was made in our image.",
+    "IMPENDING ERROR",
+    true
+  );
 
-  }
+  return;
+
+}
 
 
   showPopup(id);
