@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -80,19 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- DOM ELEMENTS ---
   const ambientOne = document.getElementById('ambient-one');
   const ambientOther = document.getElementById('ambient-other');
-  const monitorOn = document.getElementById('monitor-on');
   const input = document.getElementById('real-input');
   const redBtn = document.getElementById('submit-red');
   const greenBtn = document.getElementById('submit-green');
 
-
-  const extrasOne = document.getElementById('extras-one');
-  const extrasOther = document.getElementById('extras-other');
-
-  const monitorOverlayOne = document.getElementById('monitor-overlay-one');
-  const monitorOverlayOther = document.getElementById('monitor-overlay-other');
-
-  const backgroundOther = document.getElementById('background-other');
   const thunderAudio = new Audio('assets/audio/thunder-audio.mp3');
   thunderAudio.volume = 0.3;
 
@@ -134,51 +125,32 @@ const modalData = {
     ambientOne.play().catch(() => {});
     ambientOther.play().catch(() => {});
 
-    // Start lightning storm after first interaction
-    scheduleStorm();
+  // --- RANDOM THUNDER ---
+
+const thunderAudio = new Audio('assets/audio/thunder-audio.mp3');
+thunderAudio.volume = 0.3;
+
+function scheduleThunder() {
+
+  const randomDelay = Math.random() * 30000 + 10000;
+  // 10-40 seconds between thunder sounds
+
+  setTimeout(() => {
+
+    thunderAudio.volume = Math.random() * 0.5 + 0.3;
+    thunderAudio.currentTime = 0;
+
+    thunderAudio.play().catch(() => {});
+
+    scheduleThunder();
+
+  }, randomDelay);
+}
+
+
+// Start thunder loop
+scheduleThunder();
   }
-
-  // --- LIGHTNING STORM ---
-  if (backgroundOther) backgroundOther.style.display = 'none';
-
-  function triggerLightning() {
-    if (!isMonitorOn || nameplateOther.classList.contains('hidden') || !backgroundOther) return;
-
-    backgroundOther.style.display = 'block';
-    backgroundOther.classList.add('lightning-flash');
-
-    if (Math.random() < 0.6 && thunderAudio) {
-      thunderAudio.volume = Math.random() * 0.5 + 0.3;
-      thunderAudio.currentTime = 0;
-      thunderAudio.play().catch(() => {});
-    }
-
-    setTimeout(() => {
-      backgroundOther.classList.remove('lightning-flash');
-      backgroundOther.style.display = 'none';
-    }, 250);
-  }
-
-  function scheduleStorm() {
-    if (stormTimeout) clearTimeout(stormTimeout);
-
-    if (!isMonitorOn || nameplateOther.classList.contains('hidden')) return;
-
-    const randomDelay = Math.random() * 5000 + 15000; // 15–20s
-
-    stormTimeout = setTimeout(() => {
-      if (!isMonitorOn || nameplateOther.classList.contains('hidden')) return;
-      triggerLightning();
-      scheduleStorm();
-    }, randomDelay);
-  }
-
-  function updateStorm() {
-    if (!isMonitorOn || nameplateOther.classList.contains('hidden')) {
-      if (stormTimeout) clearTimeout(stormTimeout);
-    } else {
-      scheduleStorm();
-    }
   }
 
 
@@ -298,7 +270,7 @@ interactiveElements.forEach(id => {
     showPopup(id);
   });
   });
-    });
+
 
 </script>
 
