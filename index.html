@@ -129,6 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   };
 
+  // --- TEXT ONLY INPUTS ---
+const textResponses = {
+
+  hello: "HELLO.",
+  
+  help: "AVAILABLE COMMANDS: UNKNOWN.",
+  
+  status: "GAY!.",
+
+  whoami: "USER IDENTIFICATION REQUIRED."
+
+};
 
   // --- AMBIENT AUDIO ---
   function startAmbient() {
@@ -210,6 +222,23 @@ redBtn.addEventListener('click', () => {
 
   const popup =
     modalData[normalized];
+
+  const response =
+  textResponses[normalized];
+
+
+if (response) {
+
+  popupAudio.currentTime = 0;
+  popupAudio.play().catch(() => {});
+
+  document.getElementById('output').textContent = response;
+
+  input.value = '';
+
+  return;
+
+}
 
 
  if (!popup) {
