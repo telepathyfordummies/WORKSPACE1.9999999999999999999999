@@ -206,3 +206,67 @@ z-index: 21;
   object-fit: cover; /* fill monitor completely?? prayfully...? */
   display: block;
 }
+
+/* MODAL */
+
+#info-modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.85);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+#info-modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  position: relative;
+
+  width: 80vw;
+  max-width: 1000px;
+
+  max-height: 90vh;
+
+  background: #111;
+  border: 2px solid #fff;
+
+  padding: 20px;
+
+  overflow-y: auto;
+}
+
+#modal-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+  margin-bottom: 20px;
+}
+
+#modal-text {
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.6;
+}
+
+#modal-close {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  background: none;
+  border: none;
+
+  color: white;
+
+  font-size: 28px;
+  cursor: pointer;
+}
