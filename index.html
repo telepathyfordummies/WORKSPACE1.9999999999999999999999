@@ -222,7 +222,14 @@ function showModal(imageSrc, text, title = "???", small = false) {
 
   document.getElementById("modal-title").innerHTML = title;
 
-  document.getElementById("modal-image").src = imageSrc;
+  const modalImage = document.getElementById("modal-image");
+
+if (imageSrc) {
+  modalImage.src = imageSrc;
+  modalImage.style.display = "block";
+} else {
+  modalImage.style.display = "none";
+}
 
   document.getElementById("modal-text").innerHTML = text;
 
@@ -234,6 +241,15 @@ function showModal(imageSrc, text, title = "???", small = false) {
 
 
 function closeModal() {
+
+  const modal = document.getElementById("info-modal");
+
+  modal.classList.add("hidden");
+  modal.classList.remove("small-modal");
+
+  document.getElementById("modal-image").style.display = "block";
+
+}
 
   document
     .getElementById("info-modal")
@@ -354,8 +370,10 @@ function closeModal() {
   if (id === "breakpoint") {
 
     showModal(
+      " ",
       "God was made in our image.",
-      "IMPENDING ERROR"
+      "IMPENDING ERROR",
+      true
     );
 
     return;
