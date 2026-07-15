@@ -408,6 +408,39 @@ position: absolute;
 
 }
 
+/* SMALL BREAKPOINT MODAL */
+
+#info-modal.small-modal .modal-content {
+
+  width: 400px;
+  height: auto;
+
+  max-width: 90vw;
+  max-height: 90vh;
+
+  border: 3px solid #4a90e2;
+
+}
+
+
+#info-modal.small-modal #modal-image {
+
+  width: 250px;
+  height: auto;
+
+  margin: 20px auto;
+
+}
+
+
+#info-modal.small-modal #modal-text {
+
+  font-size: 16px;
+
+  padding: 15px;
+
+}
+
 
 #glitch1,
 #glitch2 {
