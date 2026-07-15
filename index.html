@@ -165,20 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
       modalData[normalized];
 
 
-    if (!popup) {
+   if (!popup) {
 
-      document.getElementById('output').textContent =
-        '[INPUT NOT FOUND.]';
+  const output = document.getElementById('output');
 
-      showModal(
-        "assets/popups/not-found.png",
-        "[INPUT NOT FOUND.]"
-      );
+  output.textContent = '[INPUT NOT FOUND.]';
 
-      input.value = '';
-      return;
+  input.value = '';
 
-    }
+  return;
+
+}
 
 
     document.getElementById('output').textContent = '';
