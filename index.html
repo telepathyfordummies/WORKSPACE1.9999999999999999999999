@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const redBtn = document.getElementById('submit-red');
 
   const thunderAudio = new Audio('assets/audio/thunder-audio.mp3');
-  thunderAudio.volume = 0.3;
+  thunderAudio.volume = 0.2;
 
   let ambientStarted = false;
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- RANDOM THUNDER ---
   function scheduleThunder() {
 
-    const randomDelay = Math.random() * 30000 + 10000;
+    const randomDelay = Math.random() * 900000 + 700000;
     // 10-40 seconds
 
     setTimeout(() => {
