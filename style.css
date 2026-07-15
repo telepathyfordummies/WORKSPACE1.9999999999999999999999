@@ -330,14 +330,15 @@ z-index: 21;
 }
 
 #glitch1 {
-  top: 700px;
-  left: 80px;
+  top: 1020px;
+  left: 1090px;
 }
 
 #glitch2 {
-  top: 600px; 
-  left: 700px;
+  top: 1090px; 
+  left: 150px;
 }
+
 
 
 .glitch-image {
