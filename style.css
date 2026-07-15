@@ -323,16 +323,20 @@ z-index: 21;
   cursor: pointer;
 }
 
-#glitch1 {
+#glitch1,
+#glitch2 {
+  position: absolute;
   z-index: 700;
-  top: 1419px;
-  left: 40px;
+}
+
+#glitch1 {
+  top: 700px;
+  left: 80px;
 }
 
 #glitch2 {
-  z-index: 700;
-  top: 1419px;
-  left: 80px;
+  top: 600px; 
+  left: 700px;
 }
 
 
