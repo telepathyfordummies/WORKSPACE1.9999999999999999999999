@@ -36,11 +36,63 @@ body {
     
 }
 
-
-#nameplate-base, #monitor-on, #monitor-screen, #monitor-shell, #monitor-wrapper {
+#monitor-wrapper,
+#monitor-shell {
   z-index: 20;
-      top: -50px;
+   top: -50px;
     left: 280px;
+}
+
+#monitor-screen {
+  z-index: 550;
+   top: -50px;
+    left: 280px;
+}
+
+#monitor-on {
+  z-index: 500;
+   top: -50px;
+    left: 280px;
+}
+
+}
+
+#monitor-screen {
+  position: absolute;
+  top: 480px;
+  left: 240px;
+  width: 500px;
+  height: 450px;
+
+  z-index: 550;
+
+  color: black;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  overflow-wrap: break-word;
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+
+#output {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
 }
 
 #input-bar {
