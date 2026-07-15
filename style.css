@@ -31,8 +31,11 @@ body {
 }
 
 #desk {
-  z-index: 15
+  z-index: 15;
+      top: 1319px;
+    
 }
+
 
 #nameplate-base, #monitor-on, #monitor-screen, #monitor-shell, #monitor-wrapper, #drawercontainer, #input-bar, #input-bg {
   z-index: 20
