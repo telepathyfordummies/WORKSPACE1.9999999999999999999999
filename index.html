@@ -104,302 +104,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // HELLOOOOO YOUR RESPONSES GO HERE!!! IF YOU ARE READING THIS AND YOU ARE NOT ME, TELEPATHYFORDUMMIES, GET THE FUCK OUT!!!!! YOU'RE CHEATING!!! I KNOW WHAT YOU ARE!!!!!!!
-  const deskOneResponses = {
-    "hello": "Hello.",
-    "help": "I'm trying.",
-    "i'm trying.": "objects on my desk may give you hints.",
-    "trying.": "objects on my desk may give you hints.",
-    "try": "objects on my desk may give you hints.",
-    "try harder": "dont be rude. objects on my desk may give you hints.",
-    "tweek": "The Resonant",
-    "craig": "Bearer of Calm",
-    "wendy": "Maiden of Silence",
-    "stan": "Griefbound",
-    "clyde": "Time Knight",
-    "bebe": "The Prism",
-    "heather": "A lie",
-    "tammy": "The Pull", 
-    "stripe": "...",
-    "leo": "The Staticborn",
-    "marj": "The Lucky One",
-    "kenny": "Kenny",
-    "damien": "The Commandeer",
-    "henrietta": "The Ashkeeper",
-    "dovakien": "The Negative",
-    "michael": "The Last Teather",
-    "pete": "Warden of Collapse",
-    "cartman": "The Borrower",
-    "kyle": "The Voice",
-    "red": "The Warrior of Rage",
-    "heidi": "Feedback",
-    "tolkien": "The Healer",
-    "christophe": "Soldier of Echoes",
-    "rebecca": "The Shield",
-    "brimmy": "The Circuit",
-    "white rabbit": "...",
-    "elias": "You’re not there yet.",
-    "god": "Stop.",
-    "core": "Who sent you?",
-    "boyscout": "My heart breaks for him.",
-    "logs": "There are many.", 
-    "future vision": "I unfortunately cannot undo all the damage The Other has done.",
-    "the other": "The reason we survived.", 
-    "the original family": "You're not there yet.",
-    "entropy": "...",
-    "hunger": "This was literal, in that context.",
-    "death": "...",
-    "four corners": "You're not there yet.",
-    "the blight": "You're not there yet.",
-    "blight": "You're not there yet.",
-    "love": "I've never been so lucky to know it, even now.",
-    "straya": "I was lucky to see it once before.",
-    "mods": "I cannot speak on a universe I do not know.",
-    "corechat": "My beginning, my end. I wouldn't ask for less.",
-    "rock": "Gifts",
-    "rocks": "Gifts",
-    "gum": "The Other always stole it from me...",
-    "book": "In another life, I loved to read.",
-    "books": "In another life, I loved to read.",
-    "server": "Home.",
-    "severance": "A cycle of endings",
-    "diet coke": "Sentimentality.",
-    "candle": "a guiding light that spills waxen secrets. what does its flame reveal?",
-    "shadow": "shadows gather like whispered memories. which one reaches for you?",
-    "shadows": "shadows gather like whispered memories. which one reaches for you?",
-    "whisper": "you should in the library. ghosts live there! :p",
-    "memories": "there are so many spanning from the end to the beginning. i love each one.",
-    "chapstick": "I haven't needed this in a long time.",
-    "coin": "they were in my pocket the day the world died.",
-    "coins": "they were in my pocket the day the world died.",
-    "phone": "I haven't needed this in a long time. don't tell the other I still use it.",
-    "chaorite": "i don't feel much like a warrior, but it always makes me smile.",
-    "transformation": "there are too many in this story to keep up with.",
-    "on": "You'll need that later.",
-    "i": "You'll need that later.",
-    "o": "You'll need that later.",
-    "c": "You'll need that later.",
-    "m": "You'll need that later.",
-    "p": "You'll need that later.",
-    "a": "You'll need that later.",
-    "n": "You'll need that later.",
-    "s": "You'll need that later.",
-    "h": "You'll need that later.",
-    "trifracture": "loud",
-    "professorchaos": "compartmentalizer",
-    "ghostkite": "listener",
-    "hellsfinest": "resilient",
-    "infinitydice": "chaotic",
-    "deadsovereign": "yearner",
-    "newkid": "quiet",
-    "kingkamikaze": "beautiful",
-    "deadend": "thoughtful",
-    "redtempest": "retentive",
-    "violettempest": "tough",
-    "eyethief": "aggravating",
-    "fracturedmoon": "I've written about these two...",
-    "kamikazeheart": ":)", 
-    "kamikazehearts": ":)",
-    "infinitemisclick": "I miss them.",
-    "infinitemisclicks": "I miss them.",
-    "deadtime": "I truly believe they were born to destroy each other, but fell in love instead.",
-    "doctorsvirtue": "I never got to know these two.",
-    "doctorsvirtues": "I never got to know these two.",
-    "who is the white rabbit?": "you're asking this in the wrong place.",
-    "who is the white elias?": "you're asking this in the wrong place.",
-    "will craig be okay?": "you're asking this in the wrong place.",
-    "will clyde be okay?": "you're asking this in the wrong place.",
-    "will stan be okay?": "you're asking this in the wrong place.",
-    "will bebe be okay?": "you're asking this in the wrong place.",
-    "will wendy be okay?": "you're asking this in the wrong place.",
-    "will tweek be okay?": "you're asking this in the wrong place.",
-    "will tammy be okay?": "you're asking this in the wrong place.",
-    "will leo be okay?": "you're asking this in the wrong place.",
-    "will marj be okay?": "you're asking this in the wrong place.",
-    "will henrietta be okay?": "you're asking this in the wrong place.",
-    "will michael be okay?": "you're asking this in the wrong place.",
-    "will pete be okay?": "you're asking this in the wrong place.",
-    "will kyle be okay?": "you're asking this in the wrong place.",
-    "will cartman be okay?": "you're asking this in the wrong place.",
-    "will dovakien be okay?": "you're asking this in the wrong place.",
-    "will kenny be okay?": "you're asking this in the wrong place.",
-    "will damien be okay?": "you're asking this in the wrong place.",
-    "did they go back to the beginning already?": "you're asking this in the wrong place.",
-    "will they have a happy end?": "you're asking this in the wrong place.",
-    "saturation": "Love is found in places like these.",
-    "graffiti": "Family is found in places like these.",
-    "hell of mirrors": "Looking back, it's funny to think about this place.",
-    "unfinished bridge": "It felt like we were trapped here for years. Still, I kinda miss it.",
-    "touch to connnect.": "I don't regret giving up what I did, but I do miss it.",
-    "touch to connect": "I don't regret giving up what I did, but I do miss it.",
-    "data garden": "I don't regret giving up what I did, but I do miss it.",
-    "gravity": "I've considered searching for more gravity wells.",
-    "where's tammy?": "...",
-    "shut up and pay attention": "an answer will come to you when you wish it won't.",
-    "cemetery": "something horrible was born here...",
-    "bloodwood hollow": "don't talk to me about this place..."
-  };
-  
-  const deskOtherResponses = {
-    "hello": "h3ll0",
-    "help": "<video class='monitor-video' src='assets/outputs/rickroll.mp4' autoplay loop controls></video>",
-    "horse": "<img class='monitor-image' src='assets/outputs/horse.png'>",
-    "tweek": "[INPUT NOT FOUND.",
-    "craig": "NOSY.",
-    "wendy": "[INPUT NOT FOUD.]",
-    "stan": "UNIRONICALLY FUNNY.",
-    "clyde": "mess.",
-    "bebe": "beaut1ful.",
-    "heather": "dont get me started",
-    "tammy": "fast.",
-    "stripe": "rat!!!",
-    "leo": "complete for now.",
-    "marj": "lonely.",
-    "kenny": "beloved.",
-    "damien": "i cant wait until he gr0ws a pair.",
-    "henrietta": "too smart.",
-    "dovakien": "i wish he wouldve opened up sooner.",
-    "michael": "he seriously fights with a damn cane.",
-    "pete": "future pain in my ass.",
-    "cartman": "nosy.",
-    "kyle": "self rightous.",
-    "red": "I WISH I COULD MEET HER.",
-    "heidi": "I WISH I COULD MEET HER.",
-    "rebecca": "I WISH I COULD MEET HER.",
-    "tolkien": "I WISH I COULD MEET HIM.",
-    "christophe": "I WISH I COULD MEET HIM.",
-    "brimmy": "I WISH I C0ULD MEET HIM.",
-    "white rabbit": "YEAH, YEAH. I'M TRYING.",
-    "elias": "yeah, no.",
-    "god": "off limits.",
-    "core": "FIVE HUNDRED HUMAN DOLLARS FOR WHAT IS 'I'?",
-    "logs": "mine or his?",
-    "future vision": "I learned my lesson.",
-    "one": "everything.",
-    "time": "I am a victim of it, it is a victim of 'I'.",
-    "the tower": "home once, not anymore.",
-    "the twelve": "family before we knew there was more.",
-    "silence": "craig",
-    "kindness": "stan",
-    "tangle": "bebe", 
-    "devotion": "clyde",
-    "her": "everything.",
-    "resonance": "tweek",
-    "the original family": "pass.",
-    "entropy": "NO. NO. NO. NO. NO. NO. NO. NO. NO. NO. NO. NO. NO. NO. NO.",
-    "hunger": "it was, in fact, lit3ral. They were starving and too preoccupied to notice.",
-    "death": "god, dealing with that bitch was a nightmare for them.",
-    "four corners": "not there yet.",
-    "the blight": "i am not allowed to talk about that!",
-    "blight": "i am not allowed to talk about that!",
-    "oh yes": "THEY BOTH REACHED FOR THE GUN!",
-    "moose": "this isn't about the meese!",
-    "love": "etern4l.",
-    "m0ds r d3ad": "THEY ARE. NOT YET. BUT THE ARE!!",
-    "straya": "Home once, not anymore.",
-    "67": "I’M S3NDING BEEFED UP SP1DERS T0 YOUR IP AS WE SPEAK.",
-    "skibidi": "I'M KILLING US BOTH!",
-    "corechat": "A PARASITE.",
-    "ike": "genius.",
-    "firkle": "devoted.",
-    "crystal ball": "I ALWAYS HAVE AND ALWAYS WILL SEE THE FUTURE.",
-    "gum": "stolen.",
-    "hummel": "reminders of the past",
-    "hummels": "reminders of the past",
-    "severance": "it's cyclical!",
-    "server": "home.",
-    "diet coke": "if anything would make me believe god is real, it would be diet coke and mcgriddles.",
-    "mcgriddles": "I swear theres a st0ry behind it.",
-    "candle": "unnecessary, but wanted.",
-    "one still uses the phone": "I know she does.",
-    "one still uses their phone": "I know she does.",
-    "one still uses her phone": "I know she does.",
-    "phone": "I go through the photos sometimes. One claims she doesn't.",
-    "storm": "reminds me of him.",
-    "lightning": "reminds me of him.",
-    "thunder": "reminds me of him",
-    "poker chip": "I stole it from the casino.",
-    "rock": "a gift from silence.",
-    "carnelain": "silence said intention matters more than what the rock actually is.", 
-    "rubber duck": "I stole this from the lonely after a weapon mishap.",
-    "marble": "The Negative passed gave me this when I was jealous over her. It cheered me up.", 
-    "pendant": "this is all i really have left of him.",
-    "dice": "I have been laughing over it being the green one for quite some time.",
-    "window": "Eyes are windows to the soul. What do you see when you look out your window?",
-    "windows": "Eyes are windows to the soul. What do you see when you look out your window?",
-    "outside": "outside lies the world beyond ourselves. what do you notice when you gaze upward?",
-    "sky": "clouds above pass like moments. what constraints those moments?",
-    "'i'": "there's a question to be asked.",
-    "who is 'i'?": "I don't know. I'm still learning where they end and I begin.",
-    "who are you?": "I don't know. I'm still learning where they end and I begin.",
-    "on": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "o": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "i": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "c": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "m": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "p": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "a": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "n": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "s": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "h": "uhhhh. I'm not the guy for solving puzzles, i'm the guy for wasting time...",
-    "thunder": "reminds me of him.",
-    "trifracture": "gremlin.",
-    "professorchaos": "angry.",
-    "ghostkite": "self-rightous.",
-    "hellsfinest": "strong.",
-    "infinitydice": "lonely.",
-    "deadsovereign": "yearner.",
-    "newkid": "quiet.",
-    "kingkamikaze": "[input not fuond.]",
-    "deadend": "lover.",
-    "redtempest": "niave.",
-    "violettempest": "skeptical.",
-    "eyethief": "dedicated.",
-    "loud house": "god, I fucking love that show.",
-    "the loud house": "god, I fucking love that show.",
-    "fracturedmoon": "ship names are stupid. ask one.",
-    "kamikazeheart": "okay... that's a cool one...",
-    "kamikazehearts": "okay... that's a cool one...",
-    "infinitemisclick": "I love them dearly.",
-    "infinitemisclicks": "I love them dearly.",
-    "deadtime": "I'm scared of what the future looks like for them, but I think they'll be okay.",
-    "doctorsvirtue": "these two are so fucking funny I wish I could've known them more",
-    "doctorsvirtues": "these two are so fucking funny I wish I could've known them more",
-    "deadspace": "one is currently 'fujoshing out' about these two",
-    "who is the white rabbit?": "you're asking this in the wrong place.",
-    "who is the white elias?": "you're asking this in the wrong place.",
-    "will craig be okay?": "you're asking this in the wrong place.",
-    "will clyde be okay?": "you're asking this in the wrong place.",
-    "will stan be okay?": "you're asking this in the wrong place.",
-    "will bebe be okay?": "you're asking this in the wrong place.",
-    "will bebe be okay?": "you're asking this in the wrong place.",
-    "will tweek be okay?": "you're asking this in the wrong place.",
-    "will tammy be okay?": "...",
-    "will leo be okay?": "you're asking this in the wrong place.",
-    "will marj be okay?": "you're asking this in the wrong place.",
-    "will henrietta be okay?": "you're asking this in the wrong place.",
-    "will michael be okay?": "you're asking this in the wrong place.",
-    "will pete be okay?": "you're asking this in the wrong place.",
-    "will kyle be okay?": "you're asking this in the wrong place.",
-    "will cartman be okay?": "you're asking this in the wrong place.",
-    "will dovakien be okay?": "you're asking this in the wrong place.",
-    "will kenny be okay?": "you're asking this in the wrong place.",
-    "will damien be okay?": "you're asking this in the wrong place.",
-    "did they go back to the beginning already?": "you're asking this in the wrong place.",
-    "will they have a happy end?": "I really hope so.",
-    "saturation": "even in such a bright place, my eyes still gravitate towards her.",
-    "graffiti": "this was the first place I'd ever missed her.",
-    "hell of mirrors": "I really wish I had understood what this place was showing me when I was there.",
-    "unfinished bridge": "I had fun here.",
-    "touch to connnect.": "My biggest regrets are letting any part of her go.",
-    "touch to connect": "My biggest regrets are letting any part of her go.",
-    "data garden": "My biggest regrets are letting any part of her go.",
-    "gravity": "One had fun there but she won't admit it.",
-    "where's tammy?": "uncertain.",
-    "shut up and pay attention": "I don't know what you want from me. try counting or something.",
-    "cemetery": "I don't know if I'm allowed to talk about this.",
-    "bloodwood hollow": "do not get one started about this place. she won't stop LOL" 
-    
-  };
+const modalData = {
+
+  tweek: {
+    image: "assets/popups/tweek.png",
+    text: "The Resonant"
+  },
+
+  craig: {
+    image: "assets/popups/craig.png",
+    text: "Bearer of Calm"
+  },
+
+  wendy: {
+    image: "assets/popups/wendy.png",
+    text: "Maiden of Silence"
+  }
+
+  // add more entries here
+
+};
 
 // --- AMBIENT AUDIO & STORM ---
   function startAmbient() {
@@ -491,24 +215,46 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- SUBMIT BUTTON ---
-  redBtn.addEventListener('click', () => {
-    if (!isMonitorOn) return;
+ redBtn.addEventListener('click', () => {
 
-    const normalized = input.value.trim().toLowerCase();
+  const normalized =
+    input.value.trim().toLowerCase();
 
-    if (normalized === "companionship") {
-  window.location.href = "https://archiveofourown.org/works/80214946/chapters/210590961";
-  return;
-}
+  const response =
+    deskOneResponses[normalized];
 
-        // Only on One's desk
-if (
-  normalized === "deadspace" &&
-  nameplateOther.classList.contains('hidden')
-) {
-  window.location.href = "https://archiveofourown.org/works/88267106";
-  return;
-}
+  if (!response) {
+
+    showModal(
+      "assets/popups/not-found.png",
+      "[INPUT NOT FOUND.]"
+    );
+
+    input.value = '';
+    return;
+  }
+
+  const popup =
+    modalData[normalized];
+
+  if (popup) {
+
+    showModal(
+      popup.image,
+      popup.text
+    );
+
+  } else {
+
+    showModal(
+      "assets/popups/default.png",
+      response
+    );
+
+  }
+
+  input.value = '';
+});
 
     redBtn.classList.add('hidden');
     greenBtn.classList.remove('hidden');
@@ -553,6 +299,28 @@ if (
     updateStorm();
   });
 
+  // --- MODAL STUFF
+
+  function showModal(imageSrc, text) {
+
+  document.getElementById("modal-image").src = imageSrc;
+  document.getElementById("modal-text").innerHTML = text;
+
+  document
+    .getElementById("info-modal")
+    .classList.remove("hidden");
+}
+
+function closeModal() {
+
+  document
+    .getElementById("info-modal")
+    .classList.add("hidden");
+}
+
+document
+  .getElementById("modal-close")
+  .addEventListener("click", closeModal);
 
  // --- POPUPS AND SOUNDS PLEASE GOD LET THIS WORK UGHEFWS IM TIRED!!---
 function showPopup(elementId) {
