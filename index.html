@@ -195,13 +195,22 @@ redBtn.addEventListener('click', () => {
 
     showModal(
       "assets/popups/not-found.png",
-      "[INPUT NOT FOUND.]"
+      "[INPUT NOT FOUND.]"if (!popup) {
+
+  document.getElementById('output').textContent =
+    '[INPUT NOT FOUND.]';
+
+  input.value = '';
+  return;
+}
     );
 
     input.value = '';
     return;
   }
-
+  
+document.getElementById('output').textContent = '';
+  
   showModal(
     popup.image,
     popup.text
