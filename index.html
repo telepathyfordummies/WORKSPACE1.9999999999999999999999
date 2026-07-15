@@ -245,7 +245,10 @@ function closeModal() {
   const modal = document.getElementById("info-modal");
 
   modal.classList.add("hidden");
+
   modal.classList.remove("small-modal");
+
+  document.getElementById("modal-title").innerHTML = "???";
 
   document.getElementById("modal-image").style.display = "block";
 
